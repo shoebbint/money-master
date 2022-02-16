@@ -26,41 +26,57 @@
     </header>
     <!-- this is main tags -->
     <main>
-        <section class="container">
-            <div class="row">
+        <section class="container mb-5 h-100">
+            <div class="d-flex row  g-5">
                 <!-- img col -->
                 <div class="col-6">
-                    <img class="img-fluid" src="images/side-pic.jpg" alt="">
+                    <img class="img-fluid h-100 w-100" src="images/side-pic.jpg" alt="">
                 </div>
                 <!-- calculation col -->
-                <div class="col ">
-                    <h3 class="text-center">Income</h3>
-                    <div class="d-flex justify-content-center align-items-center">
-                        <p>income:</p>
-                        <input type="text" placeholder="Enter your income">
+                <div class="col bg-secondary text-white ">
+                    <div class="first-calc">
+                        <h3 class="text-center">Income</h3>
+                        <div class="d-flex  justify-content-center align-items-center  ">
+                            <p class="my-auto">income:</p>
+                            <input type="text" placeholder="Enter your income">
+                        </div>
+                        <div class="expenses">
+                            <h3 class="text-center">Expenses</h3>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <p class="my-auto">Food:</p>
+                                <input type="text" placeholder="Enter your income">
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <p class="my-auto">Rent:</p>
+                                <input type="text" placeholder="Enter your income">
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <p class="my-auto">Clothes:</p>
+                                <input type="text" placeholder="Enter your income">
+                            </div>
+                            <div class="cal-btn d-grid  col-4 mx-auto">
+                                <button type="button" class="btn btn-info ">Calculate</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="expenses">
-                        <h3 class="text-center">Expenses</h3>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <p>Food:</p>
-                            <input type="text" placeholder="Enter your income">
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <p> Rent:</p>
-                            <input type="text" placeholder="Enter your income">
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <p> Clothes</p>
-                            <input type="text" placeholder="Enter your income">
-                        </div>
-                        <button type="button" class="btn btn-info mx-auto">Calculate</button>
-                    </div>
-                    <div>
+                    <div class="result">
                         <h3 class="text-center">Total Expense:$<span id="total-expenses">1000</span></h3>
                         <h3 class="text-center">Balance:$<span id="total-expenses">500</span></h3>
                     </div>
+                    <div class="bonus-sec">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="my-auto text-center">income:</p>
+                            <input type="text" placeholder="Enter your income">
+                            <p class="my-auto">%</p>
+                            <button type="button" class="btn btn-info">Save</button>
+                        </div>
+                        <div>
+                            <h3 class="text-center">Saving Amount:$<span id="total-expenses">1000</span></h3>
+                            <h3 class="text-center">Remaining Balance:$<span id="total-expenses">500</span></h3>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
