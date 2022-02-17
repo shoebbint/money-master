@@ -1,24 +1,19 @@
 
-// input
+// input function
+function getInput(input) {
+    const givenInput = document.getElementById(input + '-amount');
+    const InputAmount = parseFloat(givenInput.value);
+    return InputAmount;
+    givenInput.value = '';
+}
 // for calculate-button
 const calculateButton = document.getElementById('calculate-btn').addEventListener("click", function () {
 
-    const incomeInput = document.getElementById('income-amount');
-    const incomeAmount = parseFloat(incomeInput.value);
-    incomeInput.value = '';
-
-    const foodCostInput = document.getElementById('food-cost');
-    const foodAmount = parseFloat(foodCostInput.value);
-    foodCostInput.value = '';
-
-    const rentCostInput = document.getElementById('rent-cost');
-    const rentAmount = parseFloat(rentCostInput.value);
-    rentCostInput.value = '';
-
-    const clothesCostInput = document.getElementById('clothes-cost');
-    const clothesAmount = parseFloat(clothesCostInput.value);
-    clothesCostInput.value = '';
-
+    let incomeAmount = getInput("income");
+    let foodAmount = getInput("food");
+    let rentAmount = getInput("rent");
+    let clothesAmount = getInput("clothes");
+    // error handling
     if (isNaN(incomeAmount) || isNaN(foodAmount) || isNaN(rentAmount) || isNaN(clothesAmount)) {
         const firstError = document.getElementById('invalid-error');
         firstError.style.display = 'block';
@@ -32,7 +27,13 @@ const calculateButton = document.getElementById('calculate-btn').addEventListene
         let balanceAmount = document.getElementById('balance');
         const balance = parseFloat(incomeAmount) - totalExpense;
         balanceAmount.innerText = balance;
-        console.log(incomeAmount, foodAmount, rentAmount, clothesAmount, totalExpense)
+        // bonus error
+        if (totalExpense > incomeAmount) {
+            const thirdError = document.getElementById('expense-error');
+            thirdError.style.display = 'block';
+            balanceAmount.innerText = '';
+            document.getElementById('invalid-error').style.display = 'none';
+        }
     }
     else {
         const firstError = document.getElementById('neg-error');
@@ -41,6 +42,8 @@ const calculateButton = document.getElementById('calculate-btn').addEventListene
         document.getElementById('invalid-error').style.display = 'none';
 
     }
+
+
     // for save button
     const savings = document.getElementById('saving-btn').addEventListener('click', function () {
         const savingInput = document.getElementById("saving-input");
@@ -49,12 +52,16 @@ const calculateButton = document.getElementById('calculate-btn').addEventListene
 
         const totalSaving = document.getElementById('saving-amount');
         totalSaving.innerText = savingAmount;
-        console.log(savingAmount)
 
         const remainBalance = balance.innerText - savingAmount;
-        console.log(remainBalance);
         const remainingAmount = document.getElementById('remaining-balance');
         remainingAmount.innerText = parseFloat(remainBalance);
+        if (savingAmount > balance.innerText) {
+            const fourthError = document.getElementById('balance-error');
+            fourthError.style.display = 'block';
+        }
+
+
 
     })
 })

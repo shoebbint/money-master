@@ -46,15 +46,15 @@
                             <h3 class="text-center">Expenses</h3>
                             <div class="d-flex mx-auto justify-content-center align-items-center my-3">
                                 <p class="my-auto me-3 ">Food:</p>
-                                <input id="food-cost" placeholder="Enter your food cost" type="text">
+                                <input id="food-amount" placeholder="Enter your food cost" type="text">
                             </div>
                             <div class="d-flex justify-content-center align-items-center my-3">
                                 <p class="my-auto me-3 ">Rent:</p>
-                                <input id="rent-cost" type="text" placeholder="Enter your income">
+                                <input id="rent-amount" type="text" placeholder="Enter your income">
                             </div>
                             <div class="d-flex justify-content-center my-3 ">
                                 <p class="my-auto me-2  ">Clothes:</p>
-                                <input id="clothes-cost" type="text" placeholder="Enter your income">
+                                <input id="clothes-amount" type="text" placeholder="Enter your income">
                             </div>
                             <!-- first error massage -->
                             <div id="invalid-error"
@@ -72,6 +72,15 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"
                                     aria-label="Close"></button>
                             </div>
+                            <!-- third error massage -->
+                            <div id="expense-error"
+                                class="error alert alert-warning alert-dismissible fade show bg-dark fw-bold"
+                                role="alert">
+                                <strong>Sorry!</strong> your expenses is greater than your income
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+
                             <div class="cal-btn d-grid  col-4 mx-auto">
                                 <button type="button" id="calculate-btn" class="btn btn-info">Calculate</button>
                             </div>
@@ -81,8 +90,8 @@
                     <br>
                     <!-- total calculation -->
                     <div class="result">
-                        <h3 class="text-center">Total Expense:$<span id="total-expenses">1000</span></h3>
-                        <h3 class="text-center">Balance:$<span id="balance">500</span></h3>
+                        <h3 class="text-center">Total Expense:$<span id="total-expenses">0</span></h3>
+                        <h3 class="text-center">Balance:$<span id="balance">0</span></h3>
                     </div>
                     <br>
                     <!-- bonus sec -->
@@ -93,17 +102,18 @@
                             <p class="my-auto px-3">%</p>
                             <button id="saving-btn" type="button" class="btn btn-info">Save</button>
                         </div>
-                        <!-- another error massage -->
-                        <div id="saving-error"
-                            class="error alert alert-warning alert-dismissible fade show bg-info fw-bold" role="alert">
-                            <i class="fa-solid fa-triangle-exclamation"></i>
-                            <strong>Sorry user!</strong> You dont have enough balance!!.
+
+                        <!-- fourth error massage -->
+                        <div id="balance-error"
+                            class="error alert alert-warning alert-dismissible fade show bg-danger fw-bold"
+                            role="alert">
+                            <strong>Sorry user!!</strong>You dont have enough balance!!
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                         <br>
                         <div>
-                            <h3 class="text-center">Saving Amount:$<span id="saving-amount">1000</span></h3>
-                            <h3 class="text-center">Remaining Balance:$<span id="remaining-balance">500</span></h3>
+                            <h3 class="text-center">Saving Amount:$<span id="saving-amount">0</span></h3>
+                            <h3 class="text-center">Remaining Balance:$<span id="remaining-balance">0</span></h3>
                         </div>
                     </div>
 
