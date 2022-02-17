@@ -1,3 +1,6 @@
 .saving-input{
     width: 70px;
 }
+.error{
+    display: none;
+}
